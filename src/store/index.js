@@ -248,7 +248,7 @@ export default new Vuex.Store({
   actions: {
     getUserNots({commit,state},id){
       let options = {
-        url:`${"notifications/user/" + state.user.userID}`,
+        url:`${"notifications/user/" + state.user.id}`,
         method:'get'
       }
 

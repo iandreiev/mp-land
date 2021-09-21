@@ -145,7 +145,7 @@
                     <div class="promo__content">
                       <div class="promo__title">
                         <h2>
-                          Коллективные инвестиции с <span class="nowrap"
+                          Коллективные инвестиции с <span class="nowrap"
                             >Monopoly Life</span
                           >
                         </h2>
@@ -244,7 +244,7 @@
         <div class="grid">
           <div class="grid__item">
             <div class="project__action">
-              <button @click="routerPass" class="btn btn--transparent">Все проекты</button>
+              <button @click="routerPass('projects')" class="btn btn--transparent">Все проекты</button>
             </div>
           </div>
         </div>
@@ -375,7 +375,7 @@
                 <div class="swiper-slide features__slide">
                   <div class="features__content">
                     <div class="features__subtitle">
-                      <p>для выставившего бизнес на площадку</p>
+                      <p>для выставившего бизнес на площадку</p>
                     </div>
 
                     <div class="features__promo">
@@ -433,7 +433,7 @@
         <div class="grid">
           <div class="grid__item">
             <div class="scene__title">
-              <h2>Почему стоит поучаствовать в проекте?</h2>
+              <h2>Почему стоит поучаствовать в проекте?</h2>
             </div>
           </div>
         </div>
@@ -1595,9 +1595,8 @@ export default {
         this.$store.commit("SAVE_CATEGORIES", res.data);
       });
     },
-    routerPass(){
-        this.$router.push({name: 'Projects'})
-        location.reload()
+    routerPass(url){
+      window.open('https://app.monopolylife.ru/'+url, '_blank')
     }
   },
   computed:{
@@ -1606,17 +1605,15 @@ export default {
          return this.projects.slice(0,3)
       }
   },
-  async mounted() {
-    await this.getProjects();
-    await this.getCategories()
-    await this.initAll();
+   mounted() {
+     this.getProjects();
+     this.getCategories()
+     this.initAll();
   },
 };
 </script>
 
-<style scoped>
-@import url("../assets/scss/New/new-style.css");
-@import url("../assets/scss/New/libs.min.css");
+<style>
 </style>
 
 </style>

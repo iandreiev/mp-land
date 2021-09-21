@@ -4,7 +4,9 @@ import App from './App.vue'
 // import './registerServiceWorker'
 import router from './router'
 import store from './store'
-import "./assets/scss/common.scss"
+// import "./assets/scss/common.scss"
+import "./assets/scss/New/new-style.css"
+import "./assets/scss/New/libs.min.css"
 
 import "./assets/js/libs.min.js"
 import firebase from "firebase"
